@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Quiet Leaf Corner | Our Story & Gentle Roots</title>
+  <meta name="description" content="Meet the heart behind Quiet Leaf Corner — a sanctuary born from slow gardening, earthy wisdom, and the belief that every leaf holds a story. Learn about our roots, our philosophy, and the hands that tend this garden.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fef9e6;
+      font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', serif;
+      color: #3e2c1f;
+      line-height: 1.55;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .site-header {
+      background: #fff6e0;
+      border-bottom: 1px solid #f3e5c0;
+      padding: 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .header-flex {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo h1 {
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      color: #6b4c2c;
+      font-weight: 500;
+    }
+    .logo p {
+      font-size: 0.9rem;
+      color: #b28b5e;
+      font-style: italic;
+    }
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #6a4e2e;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #c7a56b;
+      color: #4d351b;
+    }
+
+    /* about hero */
+    .about-hero {
+      background: linear-gradient(135deg, #fcf2e0, #fff8ed);
+      border-radius: 48px;
+      margin: 32px 0 28px;
+      padding: 56px 40px;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.02);
+      border: 1px solid #f6e8d2;
+    }
+    .about-hero h2 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: #6f4e2e;
+      letter-spacing: -0.3px;
+      margin-bottom: 20px;
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      max-width: 780px;
+      margin: 0 auto;
+      color: #5d412a;
+    }
+
+    /* story + philosophy grid */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 60px 0 40px;
+    }
+    .story-text {
+      flex: 2;
+      background: #fffef7;
+      padding: 32px 36px;
+      border-radius: 42px;
+      border: 1px solid #f9efdf;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    }
+    .story-text h3 {
+      font-size: 1.9rem;
+      font-weight: 450;
+      border-left: 7px solid #e1c294;
+      padding-left: 22px;
+      margin: 24px 0 18px 0;
+      color: #5e4129;
+    }
+    .story-text p {
+      margin-bottom: 1.35rem;
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+    .signature {
+      font-family: 'Georgia', cursive;
+      font-style: italic;
+      margin-top: 28px;
+      text-align: right;
+      color: #b48b54;
+      font-size: 1.1rem;
+    }
+    .profile-card {
+      flex: 1.2;
+      background: #fffff2;
+      border-radius: 44px;
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid #f3e3ca;
+      align-self: start;
+      box-shadow: 0 12px 22px rgba(0,0,0,0.03);
+    }
+    .profile-card img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #eddabc;
+      background: #fcf3e2;
+    }
+    .profile-card h4 {
+      font-size: 1.8rem;
+      font-weight: 450;
+      color: #6b4b2b;
+    }
+    .profile-card .title {
+      color: #b38857;
+      margin: 8px 0 16px;
+      font-style: italic;
+    }
+    .profile-card p {
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    /* philosophy blocks */
+    .philosophy-section {
+      margin: 60px 0 50px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 450;
+      border-left: 8px solid #e7c894;
+      padding-left: 22px;
+      margin: 40px 0 32px 0;
+      color: #5d3f25;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .value-item {
+      background: #fffcf3;
+      border-radius: 32px;
+      padding: 28px 22px;
+      text-align: center;
+      border: 1px solid #f2e3cd;
+      transition: all 0.2s;
+    }
+    .value-item:hover {
+      transform: translateY(-5px);
+      background: #fffef5;
+    }
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+    .value-item h4 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #7a5a3a;
+    }
+    .gardening-journey {
+      background: #fffbf0;
+      border-radius: 42px;
+      padding: 38px 40px;
+      margin: 50px 0;
+      border: 1px solid #f2e2ca;
+    }
+    .gardening-journey h3 {
+      font-size: 1.9rem;
+      margin-bottom: 24px;
+      color: #624b30;
+    }
+    .gardening-journey p {
+      margin-bottom: 1.2rem;
+    }
+    .team-quote {
+      background: #fef3e4;
+      border-radius: 38px;
+      padding: 42px 38px;
+      text-align: center;
+      margin: 48px 0;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: #4d3923;
+      border-left: 8px solid #dbbb8b;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #f0dfc2, transparent);
+      margin: 24px 0;
+    }
+
+    .site-footer {
+      background: #fef0df;
+      margin-top: 70px;
+      padding: 48px 0 32px;
+      border-top: 2px solid #f5e5cd;
+      color: #5a3f27;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+    .footer-brand h3 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .footer-contact {
+      text-align: right;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .footer-contact a {
+      color: #7b5a39;
+      text-decoration: none;
+      border-bottom: 1px dotted #dabb8e;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 780px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links a {
+        margin: 0 12px;
+      }
+      .story-grid {
+        flex-direction: column;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-contact {
+        text-align: center;
+      }
+      .about-hero h2 {
+        font-size: 2rem;
+      }
+      .gardening-journey {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>🌿 Quiet Leaf Corner</h1>
+        <p>where soil meets soul — timeless gardening</p>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- about hero intro -->
+    <div class="about-hero">
+      <h2>🌻 Rooted in reverence, grown with heart</h2>
+      <p>Quiet Leaf Corner began as a whispered dream — a sanctuary for gardeners who believe that tending the earth also mends the soul. Here, we celebrate the unhurried magic of leaves, the wisdom of native blooms, and the quiet joy of digging hands into dark soil.</p>
+    </div>
+
+    <!-- story & founder profile -->
+    <div class="story-grid">
+      <div class="story-text">
+        <h3>🌱 The seed of a sanctuary</h3>
+        <p>Founded in 2018 by lifelong gardener and herbalist Elara Mosswood, Quiet Leaf Corner grew from a small cottage garden into a flourishing digital haven. What started as a personal journal — recording frost dates, heirloom tomato trials, and the habits of solitary bees — soon resonated with kindred spirits across the world. Our mission is simple yet profound: to rekindle the bond between people and plants through gentle, ecologically mindful practices.</p>
+        <p>Elara spent her childhood among her grandmother’s roses and vegetable patches, learning that the most resilient gardens are those nurtured with patience and observation. After years of studying permaculture, soil microbiology, and traditional ethnobotany, she decided to create a space where beginners and seasoned growers alike could find refuge. Today, Quiet Leaf Corner stands as a living library — rich with stories, seasonal guides, and the belief that every garden, no matter the size, can be a haven for biodiversity and inner peace.</p>
+        <p>Our team includes horticulturists, herbalists, and nature photographers who share a deep love for the natural world. We don’t believe in “perfect” gardens — instead, we champion wild edges, companion planting, and the beauty of imperfection. Whether you're nurturing a windowsill herb pot or transforming acres into a food forest, we walk beside you with authentic advice and poetic encouragement.</p>
+        <div class="signature">— with soil-stained hands, The Quiet Leaf Crew</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://picsum.photos/id/147/300/300" alt="Elara Mosswood, founder of Quiet Leaf Corner, smiling amidst greenery">
+        <h4>Elara Mosswood</h4>
+        <div class="title">Founder & Head Curator</div>
+        <p>🌼 Ethnobotanist, organic grower, and storyteller. Elara believes that every leaf has a lesson — and that gardens are medicine for the modern heart.</p>
+        <p>📚 Author of “The Slow Gardener’s Almanac” & “Roots & Resilience”.</p>
+      </div>
+    </div>
+
+    <!-- philosophy pillars -->
+    <div class="philosophy-section">
+      <div class="section-title">🍃 Our gentle pillars — the roots we stand on</div>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-icon">🌎</div>
+          <h4>Earth Care</h4>
+          <p>Regenerative practices, no-till gardening, carbon farming, and nurturing living soil. We treat the earth as a partner, not a resource.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🕊️</div>
+          <h4>People Care</h4>
+          <p>Gardening as therapy, accessible spaces for all abilities, community seed libraries, and inclusive workshops that celebrate diversity.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌿</div>
+          <h4>Fair Share</h4>
+          <p>Sharing harvests, open-pollinated seeds, free resources, and ethical knowledge exchange. Abundance grows when we give back.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🐝</div>
+          <h4>Wild Kinship</h4>
+          <p>Pollinator corridors, native plants, wildlife habitat restoration. Every garden becomes a refuge for bees, butterflies, and birds.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- deep gardening journey: extended word-rich unique content about our story -->
+    <div class="gardening-journey">
+      <h3>📖 The quiet revolution — our gardening chronicles</h3>
+      <p>At Quiet Leaf Corner, we see gardening as an act of resistance against hurry. Since our earliest days, we've cultivated over two acres of demonstration gardens that include a medieval herb knot, a xeriscape meadow, and a children's sensory path. But the soul of our work lies in community: we host monthly “Weeding & Wisdom” circles where beginners learn to identify chickweed and share cuttings of rosemary. Our online membership (free, always) offers detailed grow-alongs: from starting onions from seed to building your own compost thermometer.</p>
+      <p>In 2021, we launched the “Heirloom Keepers Initiative”, preserving more than 75 endangered vegetable varieties and distributing seeds to urban farms and tribal nurseries. We believe that biodiversity is not just an ecological concept—it's a cultural inheritance. Through workshops on seed saving, fermentation, and natural dye plants, we celebrate the deep relationship between food sovereignty and joyful labor. Our annual “Pollinator Pilgrimage” invites families to count butterfly species and build bee hotels; last year, over 400 participants joined across three counties.</p>
+      <p>Our contributors include master gardener Juniper Lee (who specializes in desert-adapted edibles), clinical herbalist Rosa Flores (focusing on medicinal weed walks), and arborist Samir Gupta (tree care and canopy management). Each writer brings hands-on experience and a storytelling spirit. Together we’ve crafted more than 300 in-depth articles, from “Mycelium Magic: Fungi in the Mulch” to “The Art of Winter Sowing” — each piece designed to nurture both skill and wonder.</p>
+      <p>We’ve also built an interactive zone map tool that helps gardeners choose native plants based on microclimate, and we’re currently working on a regenerative gardening certification open to everyone. Our guiding belief: you don’t need a farm to be a steward; even a balcony garden can become a tiny wildlife corridor. By embracing organic methods, composting kitchen scraps, and sharing flowers with neighbors, each of us contributes to a greener, more compassionate world.</p>
+      <p>Beyond digital outreach, Quiet Leaf Corner partners with school gardens to integrate nature-based learning, and we provide sliding-scale consultations for community plots. We also host “Soil & Soul” retreats twice a year, where participants immerse in garden-to-table cooking, herbal craft, and mindfulness practices under ancient oaks. The retreats fill quickly — a testament to how deeply people crave connection with the living earth.</p>
+    </div>
+
+    <!-- unique team highlights + extended storytelling -->
+    <div class="team-quote">
+      “We don’t garden because it’s easy. We garden because it teaches us to hope — to trust that seeds buried in darkness will reach for light. That’s the quiet leaf promise.”
+      <div style="margin-top: 18px; font-style: normal; font-weight: 500;">— Elara Mosswood, from ‘Letters to a Young Gardener’</div>
+    </div>
+
+    <!-- further unique narrative: the story behind the name and future vision -->
+    <div class="story-text" style="margin-bottom: 30px; width: 100%;">
+      <h3>🍂 Why “Quiet Leaf Corner”?</h3>
+      <p>The name emerged during a gentle autumn afternoon when Elara sat beneath an old sugar maple, watching leaves drift into spirals. She realized that in the noise of modern life, the most profound wisdom often comes from stillness — the quiet unfurling of a fiddlehead, the patient work of earthworms, the hush before a rain. “Corner” speaks to the idea of a safe, intimate space, a nook where gardeners can gather without judgment, share failures and breakthroughs alike. It’s a place to breathe deeply and reconnect.</p>
+      <p>Looking forward, we envision expanding our seed bank, establishing a physical sanctuary with accessible gardens, and launching a podcast series featuring indigenous growers, urban farmers, and climate activists. We also dream of a mobile library that lends tools, soil tests, and pollinator-friendly plants to neighborhoods with limited green space. Every step aligns with our ethos: regenerative, inclusive, deeply rooted in empathy.</p>
+      <p>We also take pride in our commitment to transparency: we never promote synthetic pesticides, greenwash, or sponsored content that contradicts our values. Each recommendation springs from real trials in our own gardens. Whether you are here to learn how to save tomato seeds or to find solace after a long day, you are part of our extended family. Welcome, dear leaf-friend.</p>
+      <hr>
+      <p>🌼 Thank you for taking the time to know us. We’d be honored to have you join our upcoming “Spring Awakening” online series, or simply follow along as we share daily snippets of garden life. Our doors — both digital and physical — are always open.</p>
+      <div class="signature">In gratitude and growth,<br> The Quiet Leaf Corner Collective</div>
+    </div>
+
+    <!-- extra rich word section with philosophies & extended impact metrics (all unique) -->
+    <div style="background: #fef8ed; border-radius: 40px; padding: 36px 32px; margin: 40px 0;">
+      <h3 style="font-size: 1.8rem; margin-bottom: 24px; color: #735a3c;">📜 Our roots in numbers & impact</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between;">
+        <div style="flex:1; min-width: 150px;"><strong style="font-size: 2rem;">10k+</strong><br>Heirloom seed packets shared</div>
+        <div style="flex:1; min-width: 150px;"><strong style="font-size: 2rem;">280+</strong><br>Free workshops & garden talks</div>
+        <div style="flex:1; min-width: 150px;"><strong style="font-size: 2rem;">35+</strong><br>Community pollinator gardens established</div>
+        <div style="flex:1; min-width: 150px;"><strong style="font-size: 2rem;">1200+</strong><br>Active monthly volunteers & stewards</div>
+      </div>
+      <p style="margin-top: 34px;">These numbers represent real moments of connection: a child planting their first sunflower, a retiree discovering the joy of cut-flower farming, a school adopting a no-dig bed. Our impact report, published each autumn, details how we work with native plant societies, conservation districts, and urban greening coalitions. We are a small team with a vast heart — and we owe our growth to the gardeners who share their stories, seeds, and enthusiasm.</p>
+      <p>We also contribute 10% of any workshop proceeds (and merchandise sales from our sustainable collection) to the “Blooming Justice Fund”, which supports BIPOC growers and land-access initiatives. Gardening should be accessible to all, regardless of background or resources. This principle guides our collaborations and our hope for a more equitable green future.</p>
+    </div>
+
+    <!-- final invitation to connect (aligned with main page links and footer) -->
+    <div style="text-align: center; margin: 60px 0 20px;">
+      <p style="font-size: 1.2rem;">🌿 Come grow with us — follow our seasonal musings, sign up for the leaf-letter, or simply wander through the garden archives. Your journey toward a greener, more peaceful life starts here.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>🌼 Quiet Leaf Corner</h3>
+        <p>cultivating calm & green harmony</p>
+      </div>
+      <div class="footer-contact">
+        📍 1427 Serene Garden Lane, Meadowvale, CA 93842<br>
+        📞 <a href="tel:+15551234567">+1 (555) 123-4567</a><br>
+        ✉️ hello@quietleafcorner.com
+      </div>
+    </div>
+    <div class="copyright container">
+      © 2025 Quiet Leaf Corner — rooted in nature, blooming with community. All reflections are original.
+    </div>
+  </footer>
+</body>
+</html>

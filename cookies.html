@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Quiet Leaf Corner | Cookies Policy — Your Privacy Matters</title>
+  <meta name="description" content="Learn how Quiet Leaf Corner uses cookies to enhance your browsing experience, analyze site traffic, and remember your preferences. Transparent & rooted in respect.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fef9e6;
+      font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', serif;
+      color: #3e2c1f;
+      line-height: 1.55;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* header / nav (coherent with main style) */
+    .site-header {
+      background: #fff6e0;
+      border-bottom: 1px solid #f3e5c0;
+      padding: 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .header-flex {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo h1 {
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      color: #6b4c2c;
+      font-weight: 500;
+    }
+    .logo p {
+      font-size: 0.9rem;
+      color: #b28b5e;
+      font-style: italic;
+    }
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #6a4e2e;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #c7a56b;
+      color: #4d351b;
+    }
+
+    /* policy hero section */
+    .policy-hero {
+      background: linear-gradient(115deg, #fcf3e2, #fff9ef);
+      border-radius: 42px;
+      margin: 32px 0 28px;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+    }
+    .policy-hero h2 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: #7a5a3a;
+      margin-bottom: 14px;
+    }
+    .policy-hero p {
+      font-size: 1.2rem;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #5e432e;
+    }
+
+    /* cookie consent banner (simulated / inline management UI) */
+    .cookie-preference-card {
+      background: #fefaf0;
+      border-radius: 36px;
+      border: 1px solid #ecdbba;
+      padding: 28px 34px;
+      margin: 28px 0 32px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .pref-title {
+      font-size: 1.8rem;
+      font-weight: 450;
+      color: #6e4f2c;
+      margin-bottom: 12px;
+      border-left: 6px solid #e1c694;
+      padding-left: 20px;
+    }
+    .cookie-setting-group {
+      margin: 28px 0 20px;
+    }
+    .toggle-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0e2ce;
+    }
+    .toggle-info h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #5c451f;
+      margin-bottom: 6px;
+    }
+    .toggle-info p {
+      font-size: 0.9rem;
+      color: #806a48;
+      max-width: 85%;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 54px;
+      height: 28px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #d4c2a4;
+      transition: 0.3s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #b48b54;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .save-pref-btn {
+      background: #e4cfaa;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #4d351c;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 16px;
+      font-family: inherit;
+    }
+    .save-pref-btn:hover {
+      background: #dabb85;
+      transform: translateY(-2px);
+    }
+    .pref-feedback {
+      margin-top: 18px;
+      background: #e2efda;
+      padding: 12px;
+      border-radius: 50px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+    }
+
+    /* main policy content (detailed) */
+    .policy-content {
+      background: #fffffffb;
+      border-radius: 42px;
+      padding: 38px 40px;
+      margin: 28px 0 48px;
+      border: 1px solid #f2e4ce;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+    }
+    .policy-block {
+      margin-bottom: 38px;
+    }
+    .policy-block h3 {
+      font-size: 1.7rem;
+      font-weight: 450;
+      color: #785f3c;
+      margin-bottom: 18px;
+      display: inline-block;
+      border-bottom: 2px solid #eedbbc;
+      padding-bottom: 5px;
+    }
+    .policy-block p, .policy-block li {
+      margin-bottom: 1rem;
+      color: #4e3922;
+    }
+    .policy-block ul {
+      padding-left: 28px;
+      margin: 12px 0;
+    }
+    .policy-block li {
+      margin-bottom: 6px;
+    }
+    hr {
+      margin: 28px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, #efdeca, transparent);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f7efdf;
+      padding: 12px 24px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #70552f;
+      font-weight: 500;
+      transition: 0.2s;
+      margin-top: 10px;
+    }
+    .back-link:hover {
+      background: #eedfca;
+      gap: 12px;
+    }
+
+    /* footer */
+    .site-footer {
+      background: #fef0df;
+      margin-top: 30px;
+      padding: 48px 0 32px;
+      border-top: 2px solid #f5e5cd;
+      color: #5a3f27;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+    .footer-brand h3 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .footer-contact-info {
+      text-align: right;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 760px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links a {
+        margin: 0 12px;
+      }
+      .policy-content {
+        padding: 28px 22px;
+      }
+      .policy-hero h2 {
+        font-size: 2rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-contact-info {
+        text-align: center;
+      }
+      .toggle-info p {
+        max-width: 100%;
+      }
+    }
+    .highlight-note {
+      background: #fbf4e6;
+      border-radius: 32px;
+      padding: 18px 24px;
+      margin: 20px 0 0;
+      font-style: italic;
+      border-left: 5px solid #dabb85;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>🌿 Quiet Leaf Corner</h1>
+        <p>where soil meets soul — timeless gardening</p>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html" style="border-bottom-color: #c7a56b;">Cookies Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Cookies policy hero -->
+    <div class="policy-hero">
+      <h2>🍪 Cookie & Crumble Notice</h2>
+      <p>Just like a garden needs gentle tending, our website uses cookies to nurture your experience. This page explains what we collect, why, and how you can manage your preferences — always with transparency and respect for your digital sanctuary.</p>
+    </div>
+
+    <!-- interactive cookie preferences panel (management UI) -->
+    <div class="cookie-preference-card" id="cookiePrefPanel">
+      <div class="pref-title">🌾 Your Cookie Preferences</div>
+      <p style="margin-bottom: 18px; color: #6c543a;">Customize which cookies you allow. Essential cookies are always active to ensure the website functions properly — they help with navigation, security, and core features. The rest you can toggle.</p>
+      
+      <div class="cookie-setting-group">
+        <!-- Essential (always on, readonly style) -->
+        <div class="toggle-item">
+          <div class="toggle-info">
+            <h4>🌱 Essential Cookies (Always Active)</h4>
+            <p>Necessary for the website to function, such as session management, security, and basic accessibility. Cannot be disabled.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="essentialToggle" checked disabled>
+            <span class="slider"></span>
+          </div>
+        </div>
+
+        <!-- Preference cookies -->
+        <div class="toggle-item">
+          <div class="toggle-info">
+            <h4>🌸 Preference Cookies</h4>
+            <p>Remember your language, region, and personalized settings (e.g., dark mode preference, garden zone filter).</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="prefCookies">
+            <span class="slider"></span>
+          </div>
+        </div>
+
+        <!-- Analytics cookies -->
+        <div class="toggle-item">
+          <div class="toggle-info">
+            <h4>📊 Analytics & Performance</h4>
+            <p>Help us understand how visitors interact with Quiet Leaf Corner — which pages flourish, popular workshops, anonymous stats to improve content.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="analyticsCookies">
+            <span class="slider"></span>
+          </div>
+        </div>
+
+        <!-- Marketing cookies -->
+        <div class="toggle-item">
+          <div class="toggle-info">
+            <h4>🌻 Marketing & Social Cookies</h4>
+            <p>Enable social sharing features, tailored recommendations, and gardening inspiration based on interests (optional).</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="marketingCookies">
+            <span class="slider"></span>
+          </div>
+        </div>
+      </div>
+      
+      <button class="save-pref-btn" id="saveCookiePrefs">🌿 Save Cookie Preferences</button>
+      <div id="cookiePrefFeedback" class="pref-feedback"></div>
+      <div class="highlight-note">
+        💡 <strong>Leafy reminder:</strong> Changing preferences may affect certain features. You can revisit this page anytime to adjust your choices. No third-party cookies are set without your consent.
+      </div>
+    </div>
+
+    <!-- Detailed cookie policy content (transparency & GDPR friendly) -->
+    <div class="policy-content">
+      <div class="policy-block">
+        <h3>🍪 What Are Cookies?</h3>
+        <p>Cookies are small text files placed on your device when you visit a website. They help us remember your actions and preferences (such as login, language, font size, and other display preferences) over a period of time, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another. At Quiet Leaf Corner, we believe in a transparent and unhurried digital experience — like a peaceful walk through the garden.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>📜 How We Use Cookies</h3>
+        <ul>
+          <li><strong>Essential Cookies:</strong> These are strictly necessary to provide you with services available through our website and to use some of its features, such as access to secure areas, form submissions (contact, workshop registration), and core navigation. Without these cookies, services you’ve asked for cannot be provided.</li>
+          <li><strong>Preference Cookies:</strong> Also known as "functionality cookies," these allow the website to remember choices you make (like your preferred plant hardiness zone or favorite blog categories) to provide a more personalized experience.</li>
+          <li><strong>Analytics Cookies:</strong> We gather anonymous data via tools like a privacy-friendly analytics tracker (similar to Plausible or self-hosted) to understand which articles resonate, workshop signup flow, and overall garden community engagement. All data is aggregated and never sold.</li>
+          <li><strong>Marketing Cookies:</strong> Used only with your consent, these cookies help deliver relevant gardening content, local nursery offers, and social media integration. They may be set by our social features (Instagram feed, Pinterest pins) after you interact with them.</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>🌿 Third-Party Cookies & Embedded Content</h3>
+        <p>Our site may include embedded content from trusted partners (e.g., gardening tutorial videos from YouTube, map directions, or nature soundscapes). These third-party services may set cookies on your device if you interact with the embedded content. We only include such features when they add value to your plant-loving journey. Our preference panel allows you to block non-essential third-party cookies.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>⏳ Cookie Duration & Management</h3>
+        <p>We use both session cookies (which expire once you close your browser) and persistent cookies (which remain until their expiration date or until you delete them). You can manage or delete cookies at any time via your browser settings. However, please note that disabling essential cookies may impact site functionality — like being unable to send a contact form or book a workshop spot. For a harmonious browsing experience, we encourage you to adjust your preferences via the panel above or your browser’s privacy controls.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>📅 Updates to This Cookies Policy</h3>
+        <p>From time to time, we may update this policy to reflect changes in technology, legal requirements, or our gardening community practices. The "last updated" date will always be visible at the bottom of this page. Significant changes will be notified via a subtle banner or leaflet icon on our homepage. We encourage you to review this policy occasionally — just as you’d check the watering needs of your favorite fern.</p>
+        <p><strong>Last updated:</strong> March 30, 2026</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>🌼 Your Consent & Rights</h3>
+        <p>By using our website, you agree to the use of essential cookies. For all other categories, we request your affirmative consent via the preference panel above. You can withdraw consent anytime by adjusting the toggles and saving your new preferences. For any questions about cookie usage or privacy practices, please reach out through our <a href="contact.html" style="color:#7b5a3a; text-decoration:underline;">contact page</a> or email us at <strong>privacy@quietleafcorner.com</strong>. We honor your digital autonomy as much as we cherish biodiversity in the garden.</p>
+      </div>
+      <hr>
+      <a href="index.html" class="back-link">← Return to Home & grow with us</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>🌼 Quiet Leaf Corner</h3>
+        <p>cultivating calm & green harmony</p>
+      </div>
+      <div class="footer-contact-info">
+        📍 1427 Serene Garden Lane, Meadowvale, CA 93842<br>
+        📞 <a href="tel:+15551234567" style="color:#6a4e2e;">+1 (555) 123-4567</a><br>
+        ✉️ hello@quietleafcorner.com
+      </div>
+    </div>
+    <div class="copyright container">
+      © 2025 Quiet Leaf Corner — rooted in nature, blooming with community. Cookies policy respects your privacy.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // cookie preference keys (simulate persistent storage with localStorage)
+      const PREF_KEY = 'qlc_cookie_preferences';
+      
+      // load saved preferences and update toggles
+      function loadCookiePreferences() {
+        const saved = localStorage.getItem(PREF_KEY);
+        if (saved) {
+          try {
+            const prefs = JSON.parse(saved);
+            document.getElementById('prefCookies').checked = !!prefs.preference;
+            document.getElementById('analyticsCookies').checked = !!prefs.analytics;
+            document.getElementById('marketingCookies').checked = !!prefs.marketing;
+          } catch(e) { /* ignore */ }
+        } else {
+          // default: all non-essential off by default (soft privacy-first approach)
+          document.getElementById('prefCookies').checked = false;
+          document.getElementById('analyticsCookies').checked = false;
+          document.getElementById('marketingCookies').checked = false;
+        }
+      }
+      
+      // save preferences and show feedback
+      function savePreferences() {
+        const prefs = {
+          essential: true, // always true
+          preference: document.getElementById('prefCookies').checked,
+          analytics: document.getElementById('analyticsCookies').checked,
+          marketing: document.getElementById('marketingCookies').checked
+        };
+        localStorage.setItem(PREF_KEY, JSON.stringify(prefs));
+        
+        // feedback message
+        const feedbackDiv = document.getElementById('cookiePrefFeedback');
+        feedbackDiv.style.display = 'block';
+        feedbackDiv.innerHTML = '🍃 Your cookie preferences have been saved. Thank you for helping us cultivate a respectful digital garden. 🌿';
+        feedbackDiv.style.backgroundColor = '#e0efda';
+        feedbackDiv.style.color = '#2f6a3a';
+        
+        // In a real scenario, you'd also set/remove actual cookies via script or update consent mode.
+        // Simulate some visual acknowledgment and hide after 4 secs
+        setTimeout(() => {
+          feedbackDiv.style.display = 'none';
+        }, 4000);
+      }
+      
+      // apply event listener to save button
+      const saveBtn = document.getElementById('saveCookiePrefs');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', savePreferences);
+      }
+      
+      // load existing preferences on page load
+      loadCookiePreferences();
+      
+      // extra note: for demonstration purposes, we also simulate a subtle "first visit" notice if no preferences exist
+      const hasVisitedBefore = localStorage.getItem('qlc_cookie_notice_shown');
+      if (!hasVisitedBefore) {
+        // gentle simulated banner (not intrusive) - but we can just set flag.
+        localStorage.setItem('qlc_cookie_notice_shown', 'true');
+        // optionally show small inline message in preference panel? We'll add a small indicator.
+        const panel = document.getElementById('cookiePrefPanel');
+        if (panel && !document.querySelector('.welcome-cookie-note')) {
+          const welcomeNote = document.createElement('div');
+          welcomeNote.className = 'highlight-note';
+          welcomeNote.style.marginTop = '16px';
+          welcomeNote.style.marginBottom = '8px';
+          welcomeNote.style.fontSize = '0.9rem';
+          welcomeNote.innerHTML = '🌼 Welcome! We value your privacy — feel free to adjust non-essential cookies using the toggles above. Your choices will be remembered.';
+          panel.appendChild(welcomeNote);
+        }
+      }
+      
+      // additional interaction: when user clicks any cookie toggle, we could optionally show unsaved message? but fine as is.
+      const toggles = ['prefCookies', 'analyticsCookies', 'marketingCookies'];
+      let unsavedFlag = false;
+      function markUnsaved() {
+        if (!unsavedFlag) {
+          unsavedFlag = true;
+          const feedback = document.getElementById('cookiePrefFeedback');
+          feedback.style.display = 'block';
+          feedback.innerHTML = '🍂 You changed cookie settings — don’t forget to click "Save Cookie Preferences".';
+          feedback.style.backgroundColor = '#fdf0df';
+          feedback.style.color = '#b5672e';
+          setTimeout(() => {
+            if (feedback.innerHTML.includes('changed cookie settings')) {
+              feedback.style.display = 'none';
+              unsavedFlag = false;
+            }
+          }, 2800);
+        }
+      }
+      toggles.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('change', markUnsaved);
+        }
+      });
+      
+      // optional: add basic cookie consent simulation: reading stored consent values from localStorage to actually block/allow any analytics or marketing
+      // (for demonstration, this script would integrate with actual analytics but we simulate by just logging)
+      function applyConsentState() {
+        const prefsData = localStorage.getItem(PREF_KEY);
+        if (prefsData) {
+          const p = JSON.parse(prefsData);
+          console.log(`[Quiet Leaf Corner] Cookie consent state - Analytics: ${p.analytics}, Marketing: ${p.marketing}, Preference: ${p.preference}`);
+          // Here you could disable/enable actual Google Analytics or tracking scripts.
+          // For this static page, we rely on transparency. If analytics were present, we'd initialize based on consent.
+          // For demonstration, we add a data attribute to body for any future scripts.
+          document.body.setAttribute('data-cookie-consent', JSON.stringify(p));
+        } else {
+          console.log('[Quiet Leaf Corner] No saved preferences, only essential cookies active by default.');
+          document.body.setAttribute('data-cookie-consent', '{"essential":true}');
+        }
+      }
+      applyConsentState();
+      // listen to storage changes (in case another tab changes)
+      window.addEventListener('storage', function(e) {
+        if (e.key === PREF_KEY) {
+          applyConsentState();
+          loadCookiePreferences(); // sync toggles across tabs
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

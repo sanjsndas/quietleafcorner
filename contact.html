@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Quiet Leaf Corner | Contact — Cultivate Connection</title>
+  <meta name="description" content="Reach the heart of Quiet Leaf Corner. Send us a message, visit our garden sanctuary, or join our workshops. We’d love to hear from fellow plant lovers.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fef9e6;
+      font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', serif;
+      color: #3e2c1f;
+      line-height: 1.55;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* header / nav (same as main style, coherent) */
+    .site-header {
+      background: #fff6e0;
+      border-bottom: 1px solid #f3e5c0;
+      padding: 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .header-flex {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo h1 {
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+      color: #6b4c2c;
+      font-weight: 500;
+    }
+    .logo p {
+      font-size: 0.9rem;
+      color: #b28b5e;
+      font-style: italic;
+    }
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #6a4e2e;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #c7a56b;
+      color: #4d351b;
+    }
+
+    /* contact hero */
+    .contact-hero {
+      background: linear-gradient(135deg, #fcf3e2, #fff9ef);
+      border-radius: 42px;
+      margin: 32px 0 28px;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+    }
+    .contact-hero h2 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: #7a5a3a;
+      margin-bottom: 14px;
+    }
+    .contact-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #5e432e;
+    }
+
+    /* two column contact layout */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 56px 0 48px;
+    }
+    .contact-form-col {
+      flex: 1.2;
+      min-width: 280px;
+      background: #fffffffb;
+      border-radius: 38px;
+      padding: 32px 34px;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.04);
+      border: 1px solid #f2e4ce;
+    }
+    .contact-info-col {
+      flex: 0.9;
+      min-width: 260px;
+      background: #fffcf3;
+      border-radius: 38px;
+      padding: 32px 28px;
+      border: 1px solid #f0e2ca;
+      box-shadow: 0 16px 28px rgba(0,0,0,0.03);
+    }
+    .form-title {
+      font-size: 1.9rem;
+      font-weight: 450;
+      margin-bottom: 8px;
+      color: #6b4a2a;
+      border-left: 6px solid #e1c694;
+      padding-left: 20px;
+    }
+    .form-sub {
+      margin-bottom: 28px;
+      color: #826a4b;
+      font-style: italic;
+      padding-left: 26px;
+    }
+    .input-group {
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #5c421f;
+      font-size: 0.95rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: #fefcf5;
+      border: 1px solid #e6d8c0;
+      border-radius: 32px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: 0.2s;
+      outline: none;
+      color: #3b2b1b;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #c6a86b;
+      box-shadow: 0 0 0 3px rgba(198, 168, 107, 0.2);
+      background: #ffffff;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    .btn-submit {
+      background: #e4cfaa;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4d351c;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.25s;
+      width: 100%;
+      margin-top: 12px;
+      font-family: inherit;
+      letter-spacing: 0.5px;
+    }
+    .btn-submit:hover {
+      background: #dabb85;
+      color: #2f2213;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+    .success-message {
+      background: #e3f0e0;
+      color: #2f6b3a;
+      padding: 14px;
+      border-radius: 40px;
+      text-align: center;
+      margin-top: 18px;
+      display: none;
+      font-weight: 500;
+    }
+    .info-block {
+      margin-bottom: 36px;
+    }
+    .info-block h3 {
+      font-size: 1.7rem;
+      font-weight: 450;
+      color: #7e5d3b;
+      margin-bottom: 18px;
+      border-bottom: 2px dashed #eedbbc;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 22px;
+      font-size: 1.05rem;
+    }
+    .contact-icon {
+      font-size: 1.8rem;
+      min-width: 48px;
+      text-align: center;
+    }
+    .contact-detail-item a {
+      color: #6f542f;
+      text-decoration: none;
+      border-bottom: 1px dotted #d7bc8a;
+    }
+    .contact-detail-item a:hover {
+      color: #4c351b;
+    }
+    .opening-hours {
+      background: #fef5e8;
+      padding: 18px 20px;
+      border-radius: 28px;
+      margin: 20px 0;
+    }
+    .opening-hours p {
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .social-links {
+      margin-top: 28px;
+      display: flex;
+      gap: 24px;
+    }
+    .social-links a {
+      font-size: 1.7rem;
+      text-decoration: none;
+      background: #f6ecdb;
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      transition: 0.2s;
+      color: #7c5c39;
+    }
+    .social-links a:hover {
+      background: #e9d9be;
+      transform: scale(1.05);
+    }
+    .map-placeholder {
+      margin-top: 28px;
+      background: #e7dcc8;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .map-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    hr {
+      margin: 30px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, #f0e0c6, transparent);
+    }
+
+    /* footer */
+    .site-footer {
+      background: #fef0df;
+      margin-top: 70px;
+      padding: 48px 0 32px;
+      border-top: 2px solid #f5e5cd;
+      color: #5a3f27;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+    .footer-brand h3 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .footer-contact-info {
+      text-align: right;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 760px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links a {
+        margin: 0 12px;
+      }
+      .contact-grid {
+        flex-direction: column;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-contact-info {
+        text-align: center;
+      }
+      .contact-hero h2 {
+        font-size: 2rem;
+      }
+      .form-title {
+        font-size: 1.6rem;
+      }
+    }
+    .note-grace {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 16px;
+      color: #a98f67;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <h1>🌿 Quiet Leaf Corner</h1>
+        <p>where soil meets soul — timeless gardening</p>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" style="border-bottom-color: #c7a56b;">Contact</a>
+        <a href="terms.html">Terms Of Privacy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookies Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- gentle contact intro -->
+    <div class="contact-hero">
+      <h2>🌼 Let’s grow together</h2>
+      <p>Whether you have a gardening question, wish to join our workshops, or simply want to share your green journey — our little leaf corner is always open. Reach out, and we’ll reply with a sprinkle of botanical joy.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- LEFT: contact form -->
+      <div class="contact-form-col">
+        <div class="form-title">Send us a note</div>
+        <div class="form-sub">✍️ Seeds of conversation bloom into friendship</div>
+        <form id="leafContactForm">
+          <div class="input-group">
+            <label>🌱 Full name</label>
+            <input type="text" id="fullName" placeholder="e.g., Lily Greenwood" required>
+          </div>
+          <div class="input-group">
+            <label>🍃 Email address</label>
+            <input type="email" id="emailAddr" placeholder="hello@leafgarden.com" required>
+          </div>
+          <div class="input-group">
+            <label>🌸 Subject</label>
+            <select id="subjectSelect">
+              <option value="General inquiry">🌿 General gardening inquiry</option>
+              <option value="Workshop registration">🌻 Workshop / event registration</option>
+              <option value="Collaboration">🌼 Collaboration & partnerships</option>
+              <option value="Visit & consultation">🍂 Visit or consultation</option>
+              <option value="Other">💚 Other green thoughts</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>💬 Your message (grow your words)</label>
+            <textarea id="messageText" placeholder="Tell us about your garden dreams, questions, or just say hello..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">🌿 Send Message →</button>
+          <div id="formFeedback" class="success-message"></div>
+          <div class="note-grace">✨ We cherish every message — replies within 2–3 sunrises.</div>
+        </form>
+      </div>
+
+      <!-- RIGHT: contact info + address + phone -->
+      <div class="contact-info-col">
+        <div class="info-block">
+          <h3>🌻 Garden sanctuary</h3>
+          <div class="contact-detail-item">
+            <div class="contact-icon">📍</div>
+            <div>1427 Serene Garden Lane, Meadowvale, CA 93842<br> <span style="font-size:0.85rem;">(next to the old oak & lavender meadow)</span></div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-icon">📞</div>
+            <div><a href="tel:+15551234567">+1 (555) 123-4567</a> — gardening hours hotline</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-icon">✉️</div>
+            <div><a href="mailto:hello@quietleafcorner.com">hello@quietleafcorner.com</a></div>
+          </div>
+        </div>
+
+        <div class="opening-hours">
+          <h3 style="margin-bottom: 12px; font-size:1.4rem;">🌿 Visit & Quiet Hours</h3>
+          <p><span>🌸 Garden & Nursery:</span><span>Wed – Sun: 10am – 6pm</span></p>
+          <p><span>🍂 Workshop space:</span><span>By appointment (Fri/Sat)</span></p>
+          <p><span>🌱 Seed Library pickup:</span><span>Thursday 2pm–5pm</span></p>
+          <p><span>💚 Closed:</span><span>Monday & Tuesday (nature days)</span></p>
+        </div>
+
+        <div class="info-block">
+          <h3>🌼 Rooted community</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Pinterest">📌</a>
+            <a href="#" aria-label="Facebook">🌾</a>
+            <a href="#" aria-label="YouTube">🎥</a>
+          </div>
+          <p style="margin-top: 18px; font-size:0.9rem;">Follow us for daily plant wisdom, free garden tips, and seasonal magic.</p>
+        </div>
+
+        <!-- simple map mockup (natural charm) -->
+        <div class="map-placeholder">
+          <img class="map-img" src="https://picsum.photos/id/104/600/220" alt="Peaceful garden path map illustration - Quiet Leaf Corner location surrounded by trees and flowerbeds">
+          <div style="padding: 12px; text-align:center; font-size:0.85rem; background:#fff2e2;">🌳 Wander to our meadow — ample parking & pollinator garden entrance.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- additional gardening connection message (unique extended content) -->
+    <div style="background: #fffcf1; border-radius: 38px; padding: 32px 34px; margin: 20px 0 48px; border: 1px solid #f5e7cf;">
+      <h3 style="font-size: 1.7rem; color: #755c38; margin-bottom: 18px;">🌻 Why reach out? Let's deepen the roots</h3>
+      <p style="margin-bottom: 16px;">At Quiet Leaf Corner, every conversation is like planting a new seed. Our team consists of master gardeners, herbalists, and permaculture designers who love to exchange knowledge. Whether you need advice on reviving a wilting fern, planning a native wildflower meadow, or organizing a community seed swap — we're here to support. You can also schedule private garden consultations (onsite or virtual) where we walk your beds together, identifying microclimates, soil health improvements, and edible landscaping opportunities. Our phone line is open during nursery hours, and we aim to return voicemails within 24 hours. For event bookings (yoga in the gardens, botanical dye workshops) use the contact form and mark "Workshop registration".</p>
+      <p>We also welcome volunteers and garden enthusiasts! If you'd like to lend a hand in our demonstration food forest, join our seasonal planting days, or become a "Leaf Steward", mention it in your message. Together we cultivate not only plants but a resilient, joyful community. For press inquiries, collaborations with botanical artists, or wholesale inquiries for our organic herb starts, please use the collaboration subject. And don't forget — you can also visit us physically to enjoy the sensory labyrinth, the dahlia cutting garden, and the handcrafted rustic shop. We look forward to hearing your story. 💚</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>🌼 Quiet Leaf Corner</h3>
+        <p>cultivating calm & green harmony</p>
+      </div>
+      <div class="footer-contact-info">
+        📍 1427 Serene Garden Lane, Meadowvale, CA 93842<br>
+        📞 <a href="tel:+15551234567">+1 (555) 123-4567</a><br>
+        ✉️ hello@quietleafcorner.com
+      </div>
+    </div>
+    <div class="copyright container">
+      © 2025 Quiet Leaf Corner — rooted in nature, blooming with community. All reflections are original.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const contactForm = document.getElementById('leafContactForm');
+      const feedbackDiv = document.getElementById('formFeedback');
+
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // get values
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('emailAddr').value.trim();
+        const subject = document.getElementById('subjectSelect').value;
+        const message = document.getElementById('messageText').value.trim();
+
+        if (!name || !email) {
+          feedbackDiv.style.display = 'block';
+          feedbackDiv.style.backgroundColor = '#fce4d6';
+          feedbackDiv.style.color = '#b3512c';
+          feedbackDiv.innerText = '🌿 Please fill in your name and email so we can get back to you.';
+          setTimeout(() => {
+            feedbackDiv.style.display = 'none';
+          }, 3000);
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          feedbackDiv.style.display = 'block';
+          feedbackDiv.style.backgroundColor = '#fce4d6';
+          feedbackDiv.style.color = '#b3512c';
+          feedbackDiv.innerText = '🍃 Please enter a valid email address (with @ and domain).';
+          setTimeout(() => {
+            feedbackDiv.style.display = 'none';
+          }, 3000);
+          return;
+        }
+
+        // Simulate sending a peaceful message (no backend, just confirmation)
+        feedbackDiv.style.display = 'block';
+        feedbackDiv.style.backgroundColor = '#e0efda';
+        feedbackDiv.style.color = '#2b6e3c';
+        feedbackDiv.innerHTML = `✨ Thank you, ${name}! Your message (${subject}) has been received with care. Our leaf team will reply within 48h. Happy gardening! 🌻`;
+
+        // Reset form optionally
+        contactForm.reset();
+        
+        // auto hide after 5 sec
+        setTimeout(() => {
+          feedbackDiv.style.display = 'none';
+        }, 5000);
+      });
+    })();
+  </script>
+</body>
+</html>
